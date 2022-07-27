@@ -1,0 +1,31 @@
+.Header {
+  display: grid;
+  /* align-items: center;
+  text-align: center; */
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: black;
+  color: tomato;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Header div {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.Header nav {
+  text-align: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.Header a {
+  margin: 10px;
+  color: papayawhip;
+}
