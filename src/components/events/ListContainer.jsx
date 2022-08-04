@@ -19,7 +19,7 @@ const EventFeed = () => {
 
   if (loading) return <h1>Loading...</h1>;
 
-  return <EventList items={events} />;
+  return <EventList events={events} />;
 };
 
 export default EventFeed;
