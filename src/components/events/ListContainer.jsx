@@ -6,16 +6,14 @@ const EventFeed = () => {
   const [loading, setLoading] = useState(true);
   const [events, setEvents] = useState([]);
 
-  useEffect(
-    () =>
-      fetchEvents()
+  useEffect(() => {
+    fetchEvents()
         .then((data) => data.body)
         .then((events) => {
           setEvents(events);
         })
-        .finally(() => setLoading(false)),
-    []
-  );
+        .finally(() => setLoading(false))
+  }, []);
 
   if (loading) return <h1>Loading...</h1>;
 
