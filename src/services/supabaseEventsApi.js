@@ -5,3 +5,13 @@ export const fetchEvents = async () => {
   console.log("data array", data);
   return data;
 };
+
+export const fetchEventById = async (id) => {
+  const data = await supabase
+    .from("events")
+    .select()
+    .eq("id", id);
+  console.log("data array", data);
+  console.log(data);
+  return data;
+}
