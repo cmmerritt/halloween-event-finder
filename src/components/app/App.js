@@ -12,8 +12,8 @@ export default function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="events" element={<EventFeed />} />
-          <Route path="events/:id" element={<EventDetail />} />
+          <Route path="/events" element={<EventFeed />} />
+          <Route path="/events/:id" element={<EventDetail />} />
         </Routes>
       </Router>
       </div>
