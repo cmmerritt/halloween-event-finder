@@ -1,48 +1,18 @@
 import React from "react";
-import PropTypes from "prop-types";
-import EventDetail from "../events/EventDetail.jsx";
-import { NavLink } from "react-router-dom";
+import Event from "./Event.jsx";
+import styles from './EventList.module.css';
 
 const EventList = ({ events }) => (
   <>
-    <NavLink to="/form">Go To Form</NavLink>
-    <ul aria-label="events">
+    <ul aria-label="events" className={styles.EventList}>
       {events.map((event) => (
         <li key={event.event_id}>
-          <EventDetail
-            title={event.title}
-            description={event.description}
-            date={event.date}
-            time={event.time}
-            location={event.location}
-            address={event.address}
-            url={event.url}
-            isFree={event.isFree}
-            price={event.price}
-            category={event.category}
-          />
+          <Event {...event} />
+          <hr />
         </li>
       ))}
     </ul>
   </>
 );
-
-EventList.propTypes = {
-  events: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string,
-      date: PropTypes.instanceOf(Date).isRequired,
-      time: PropTypes.number,
-      location: PropTypes.string,
-      address: PropTypes.string,
-      url: PropTypes.string,
-      isFree: PropTypes.bool,
-      price: PropTypes.number,
-      category: PropTypes.string
-    })
-  ),
-};
 
 export default EventList;

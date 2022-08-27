@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 
 const Header = () => {
-  console.log(styles.Header);
   return <header className={styles.Header}>
     <div>
       <h1>Portland Halloween Event Finder</h1>

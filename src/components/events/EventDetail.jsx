@@ -1,37 +1,38 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useState, useEffect } from 'react';
+import { fetchEventById } from '../../services/supabaseEventsApi';
+import { useParams } from 'react-router-dom';
+import styles from "./EventDetail.module.css";
 
-const EventDetail = ({ title, description, date, time, location, address, url, isFree, price, category }) => (
-  <>
-    <p>{title}</p>
-    <p>{description}</p>
-    <p>{date}</p>
-    <p>{time}</p>
-    <p>{location}</p>
-    <p>{address}</p>
-    <p>{url}</p>
-    <p>{isFree}</p>
-    <p>{price}</p>
-    <p>{category}</p>
-  </>
-);
+const EventDetail = () => {
+  const { id } = useParams();
 
-EventDetail.propTypes = {
-  events: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string,
-      date: PropTypes.instanceOf(Date).isRequired,
-      time: PropTypes.number,
-      location: PropTypes.string,
-      address: PropTypes.string,
-      url: PropTypes.string,
-      isFree: PropTypes.bool,
-      price: PropTypes.number,
-      category: PropTypes.string
-    })
-  ),
+  const [loading, setLoading] = useState(true);
+  const [event, setEvent] = useState([]);
+
+  useEffect(
+    () =>
+      fetchEventById(id)
+        .then((data) => data.body)
+        .then((event) => {
+          setEvent(event);
+        })
+        .finally(() => setLoading(false)),
+    [id]
+  );
+
+  if (loading) return <h1>Loading...</h1>;
+
+  return (
+    <section className={styles.EventDetail}>
+      <dl>
+        <dt>Title: </dt>
+        <dd>{event[0].title}</dd>
+
+        <dt>Description: </dt>
+        <dd>{event[0].description}</dd>
+      </dl>
+    </section>
+  );
 };
 
 export default EventDetail;
