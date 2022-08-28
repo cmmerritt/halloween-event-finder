@@ -6,9 +6,12 @@ import supabaseClient from '../../services/supabaseClient';
 import EventFeed from "../events/ListContainer";
 import EventDetail from "../events/EventDetail";
 import SignUp from "../signup/SignUp";
+import AddEventForm from '../events/AddEventForm';
+import { PrivateRoute } from '../../services/PrivateRoute';
 import styles from "./App.module.css";
 
 export default function App() {
+
   return (
     <>
       <div className={styles.App}>
@@ -19,6 +22,13 @@ export default function App() {
             <Route path="/events" element={<EventFeed />} />
             <Route path="/events/:id" element={<EventDetail />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/addevent" element={
+              <PrivateRoute>
+                <AddEventForm />
+              </PrivateRoute>
+              } 
+            />
+            <Route path="/" element={<EventFeed />} />
           </Routes>
         </UserContextProvider>
       </Router>
