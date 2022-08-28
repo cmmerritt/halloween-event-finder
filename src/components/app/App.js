@@ -22,12 +22,7 @@ export default function App() {
             <Route path="/events" element={<EventFeed />} />
             <Route path="/events/:id" element={<EventDetail />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/addevent" element={
-              <PrivateRoute>
-                <AddEventForm />
-              </PrivateRoute>
-              } 
-            />
+            <Route path="/addevent" element={<PrivateRoute component={AddEventForm}/>} />
             <Route path="/" element={<EventFeed />} />
           </Routes>
         </UserContextProvider>

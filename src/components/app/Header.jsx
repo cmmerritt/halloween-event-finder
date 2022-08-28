@@ -4,6 +4,8 @@ import PrivateHeader from "./PrivateHeader";
 
 const Header = () => {
   const { user } = useUser();
+  console.log(user);
+
   if(user !== null) {
     return <PrivateHeader />;
   } else {

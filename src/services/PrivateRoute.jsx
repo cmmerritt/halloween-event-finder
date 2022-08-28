@@ -1,19 +1,18 @@
 import { useUser } from "../services/UserContext"
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 
-export const PrivateRoute = ({ children }) => {
+export const PrivateRoute = ({ component: RouteComponent }) => {
 
   const { user } = useUser();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (user === null) {
-      navigate("/events");
-    }
-  }, [navigate, user])
+  console.log(user);
 
-  return children;
+  if (user !== null) {
+    return <RouteComponent />
+  } else {
+    navigate("/events");
+  }
 };
 
 
