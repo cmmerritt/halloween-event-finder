@@ -9,6 +9,7 @@ const PrivateHeader = () => {
     </div>
     <nav>
       <NavLink to="/events">Events List</NavLink>
+      <NavLink to="/wishlist">My Wishlist</NavLink>
     </nav>
   </header>;
 };
