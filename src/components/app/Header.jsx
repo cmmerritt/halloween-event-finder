@@ -1,17 +1,15 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import styles from './Header.module.css';
+import { useUser } from "../../services/UserContext";
+import PublicHeader from "./PublicHeader";
+import PrivateHeader from "./PrivateHeader";
 
 const Header = () => {
-  return <header className={styles.Header}>
-    <div>
-      <h1>Portland Halloween Event Finder</h1>
-    </div>
-    <nav>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/events">Events List</NavLink>
-    </nav>
-  </header>;
+  const { user } = useUser();
+
+  if(user !== null) {
+    return <PrivateHeader />;
+  } else {
+    return <PublicHeader />;
+  }
 };
 
 export default Header;

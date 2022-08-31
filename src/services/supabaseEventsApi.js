@@ -1,4 +1,4 @@
-import supabase from "../supabaseClient"
+import supabase from "./supabaseClient"
 
 export const fetchEvents = async () => {
   const data = await supabase.from("events").select();
