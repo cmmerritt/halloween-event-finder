@@ -1,12 +1,33 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import supabase from "../../services/supabaseClient";
 import PropTypes from "prop-types";
 
-const WishListItem = ({ id, user_id, event_id }) => (
-  <>
+const WishListItem = ({ id, user_id, event_id }) => {
+
+  const navigate = useNavigate();
+
+  async function handleClick() {
+    const { data, error } = await supabase
+    .from("favorites")
+    .delete()
+    .match({ id: id })
+    if (error) {
+      console.error(error);
+      return alert(error.message);
+    }
+    navigate("/wishlist");
+    console.log(data);
+  }
+
+  return (
+    <>
     <Link to={`/events/${event_id}`}>{event_id}</Link>
+    <button onClick={handleClick}>Delete</button>
   </>
-);
+  )
+  
+  };
 
 Event.propTypes = {
   events: PropTypes.arrayOf(

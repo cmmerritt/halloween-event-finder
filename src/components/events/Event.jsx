@@ -23,7 +23,7 @@ Event.propTypes = {
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       description: PropTypes.string,
-      date: PropTypes.instanceOf(Date).isRequired,
+      date: PropTypes.instanceOf(Date),
       time: PropTypes.number,
       location: PropTypes.string,
       address: PropTypes.string,
