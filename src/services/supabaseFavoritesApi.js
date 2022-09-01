@@ -7,3 +7,4 @@ export const fetchWishlistByUserId = async (id) => {
     .eq("user_id", id);
   return data;
 }
+
