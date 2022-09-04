@@ -14,8 +14,8 @@
   width: 100%;
   height: 100%;
 
-  background-color: black;
-  color: tomato;
+  background-color: #403d39ff;
+  color: #eb5e28ff;
   font-family:Halloween, 'Arial Narrow', Arial, sans-serif;
   font-size: x-large;
 }
@@ -33,5 +33,5 @@
 
 .Header a {
   margin: 10px;
-  color: papayawhip;
+  color: #eb5e28ff;;
 }

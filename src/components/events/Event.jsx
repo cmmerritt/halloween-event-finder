@@ -1,21 +1,26 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import { format } from "date-fns";
 import PropTypes from "prop-types";
 
-const Event = ({ id, title, description, date, time, location, address, url, isFree, price, category }) => (
+const Event = ({ id, title, description, date, time, location, address, url, isFree, price, category }) => {
+  const formattedDate = format(new Date(date), 'cccc, MMMM d, yyy');
+  const datePlusTime = date + ' ' + time;
+  const formattedTime = format(new Date(datePlusTime), 'h:mm bbbb')
+  
+  return (
   <>
     <Link to={`/events/${id}`}>{title}</Link>
-    <p>Event description: {description}</p>
-    <p>Date: {date}</p>
-    <p>Time: {time}</p>
-    <p>Location: {location}</p>
-    <p>Address: {address}</p>
-    <p>Link: {url}</p>
+    <p>{description}</p>
+    <p>{formattedDate} at {formattedTime}</p>
+    <p>{location}, {address}</p>
+    <p><a href={url}>Link to event</a></p>
     <p>Is this event free? {isFree}</p>
     <p>Price: ${price}</p>
     <p>Category: {category}</p>
   </>
-);
+)
+};
 
 Event.propTypes = {
   events: PropTypes.arrayOf(

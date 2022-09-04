@@ -110,6 +110,7 @@ const AddEventForm = () => {
             <select title="category" name="category" value={category} onChange={(e) => setCategory(e.target.value)}>
               <option value="barcrawl">Bar Crawl</option>
               <option value="concert">Concert</option>
+              <option value="convention">Convention/Expo</option>
               <option value="paint">Create Your Own Painting, Ceramics, etc.</option>
               <option value="haunt">Haunt (e.g., haunted house)</option>
               <option value="hayride">Hayride</option>
