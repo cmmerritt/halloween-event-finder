@@ -24,7 +24,7 @@ const PublicEventDetail= () => {
         <div className={styles.EventDetail}>
           <div>
             <h3>{event[0].title}</h3>
-            <div>Description: {event[0].description}</div>
+            <div>{event[0].description}</div>
           </div>
         </div>
         <Link to="/events">Go back to all events</Link>

@@ -84,7 +84,7 @@ const PrivateEventDetail = () => {
           <div className={styles.EventDetail}>
             <div>
               <h3>{event[0].title}</h3>
-              <div>Description: {event[0].description}</div>
+              <div>{event[0].description}</div>
             </div>
           </div>
           <button onClick={handleClick}>Add to wishlist</button>

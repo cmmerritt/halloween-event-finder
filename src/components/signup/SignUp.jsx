@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useUser } from "../../services/UserContext";
 import supabase from "../../services/supabaseClient";
 import { useNavigate } from "react-router-dom";
+import styles from "./SignUp.module.css";
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -30,11 +31,11 @@ export default function SignUp() {
   }
 
   return (
-    <main>
+    <main className={styles.SignUp}>
       <form onSubmit={(e) => handleSignUp(e)}>
         <h3>Sign up to submit events and save your wishlist!</h3>
         <div>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Email address </label>
           <input
             required
             type="email"
@@ -42,8 +43,8 @@ export default function SignUp() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+          <button type="submit">Send Me A Magic Link!</button>
         </div>
-        <button type="submit">Send Me A Magic Link!</button>
       </form>
     </main>
   );
