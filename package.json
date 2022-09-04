@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.12.4",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/material": "^5.10.3",
     "@supabase/supabase-js": "^1.35.5",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -11,6 +13,7 @@
     "css-loader": "^6.7.1",
     "css-modules": "^0.3.0",
     "date-fns": "^2.29.2",
+    "emotion": "^11.0.0",
     "file-loader": "^6.2.0",
     "path": "^0.12.7",
     "prop-types": "^15.8.1",
