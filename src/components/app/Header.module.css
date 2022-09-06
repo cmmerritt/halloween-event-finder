@@ -3,35 +3,18 @@
   src: url('HallowenInline.ttf');
 }
 
-.Header {
-  display: grid;
-  /* align-items: center;
-  text-align: center; */
-  grid-template-columns: auto;
-  grid-template-rows: 1fr 1fr;
-  justify-items: center;
-
+/* .Header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
   width: 100%;
   height: 100%;
 
   background-color: #403d39ff;
   color: #eb5e28ff;
   font-family:Halloween, 'Arial Narrow', Arial, sans-serif;
-  font-size: x-large;
-}
+  font-size: calc(10px + 2vmin);
+} */
 
-.Header div {
-  display: inline-flex;
-  flex-wrap: wrap;
-}
-
-.Header nav {
-  text-align: center;
-  align-items: center;
-  margin: 10px;
-}
-
-.Header a {
-  margin: 10px;
-  color: #eb5e28ff;;
-}
