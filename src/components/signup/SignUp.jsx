@@ -12,11 +12,10 @@ export default function SignUp() {
   if (session) navigate("/events");
 
   const [email, setEmail] = useState("");
+  const [showMessage, setShowMessage] = useState(false);
 
   async function handleSignUp(e) {
     e.preventDefault();
-
-    console.log("doing sign in");
     const { user, session, error } = await supabase.auth.signIn({
       email: email,
     });
@@ -30,12 +29,22 @@ export default function SignUp() {
     console.log("session", session);
   }
 
+  const onClick = () => {
+    setShowMessage(true);
+  }
+
+  const Message = () => (
+    <p id="message">
+      Check your email for your magic link! You may close this window.
+    </p>
+  )
+
   return (
     <main className={styles.SignUp}>
       <form onSubmit={(e) => handleSignUp(e)}>
         <h3>Sign up to submit events and save your wishlist!</h3>
         <div>
-          <label htmlFor="email">Email address </label>
+          <label htmlFor="email">Email address: </label>
           <input
             required
             type="email"
@@ -43,7 +52,10 @@ export default function SignUp() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <button type="submit">Send Me A Magic Link!</button>
+          <button type="submit" onClick={onClick}>Send Me A Magic Link!</button>
+          <div>
+          { showMessage ? <Message /> : null }
+          </div>
         </div>
       </form>
     </main>
