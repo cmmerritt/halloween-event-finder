@@ -12,18 +12,14 @@ import './Header.module.css';
 
 const PublicHeader = () => {
 
-  const [state, setState] = useState({
-    mobileView: false,
-    drawerOpen: false
-  });
-
-  const { mobileView, drawerOpen } = state;
+  const [mobileView, setMobileView] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
     const setResponsiveness = () => {
       return window.innerWidth < 900
-        ? setState((prevState) => ({ ...prevState, mobileView: true }))
-        : setState((prevState) => ({ ...prevState, mobileView: false }));
+        ? setMobileView(true)
+        : setMobileView(false);
     };
 
     setResponsiveness();
@@ -89,11 +85,11 @@ const PublicHeader = () => {
 
   const displayMobile = () => {
     const handleDrawerOpen = () => {
-      setState((prevState) => ({ ...prevState, drawerOpen: true }))
+      setDrawerOpen(true);
     }
 
     const handleDrawerClose = () => {
-      setState((prevState) => ({ ...prevState, drawerOpen: false }))
+      setDrawerOpen(false);
     }
     
     const getDrawerChoices = () => {
