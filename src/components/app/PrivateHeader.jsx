@@ -32,7 +32,7 @@ const PrivateHeader = () => {
   const headersData = [
     {
       label: "Events",
-      href: "/events",
+      href: "/",
     },
     {
       label: "My wishlist",

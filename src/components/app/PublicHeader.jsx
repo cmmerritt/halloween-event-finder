@@ -33,7 +33,7 @@ const PublicHeader = () => {
   const headersData = [
     {
       label: "Events",
-      href: "/events",
+      href: "/",
     },
     {
       label: "Sign up/Log in",
