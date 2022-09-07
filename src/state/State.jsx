@@ -10,7 +10,6 @@ export const useWishList = (id) => {
         .then((list) => {
           setList(list);
         })
-        //.finally(() => setLoading(false))
   }, [id]);
   return list;
 }
@@ -23,7 +22,6 @@ export const useEvent = (id) => {
         .then((event) => {
           setEvent(event);
         })
-        //.finally(() => setLoading(false))
   }, [id]);
   return event;
 }

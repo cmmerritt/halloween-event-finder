@@ -20,6 +20,7 @@ export default function App() {
         <UserContextProvider supabaseClient={supabaseClient}>
           <Header />
           <Routes>
+            <Route path="/index.html" element={<EventFeed />} />
             <Route path="/events" element={<EventFeed />} />
             <Route path="/events/:id" element={<EventDetail />} />
             <Route path="/signup" element={<SignUp />} />

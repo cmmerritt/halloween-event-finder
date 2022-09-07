@@ -74,7 +74,6 @@ const PrivateHeader = () => {
 
   const ButtonDiv = styled.div`
     padding-left: 500px;
-    
   `
 
   const DrawerContainer = styled.div`
