@@ -72,7 +72,7 @@ const PrivateEventDetail = () => {
             <div>Description: {event[0].description}</div>
           </div>
         </div>
-        <Link to="/">Go back to all events</Link>
+        <Link to="/events">Go back to all events</Link>
       </div>
     )
   } else {
@@ -85,7 +85,7 @@ const PrivateEventDetail = () => {
             </div>
           </div>
           <button onClick={handleClick}>Add to wishlist</button>
-          <Link to="/">Go back to all events</Link>
+          <Link to="/events">Go back to all events</Link>
         </div>
       );
     }

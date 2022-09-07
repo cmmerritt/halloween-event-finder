@@ -27,7 +27,7 @@ const PublicEventDetail= () => {
             <div>{event[0].description}</div>
           </div>
         </div>
-        <Link to="/">Go back to all events</Link>
+        <Link to="/events">Go back to all events</Link>
       </div>
     );
   }
