@@ -38,9 +38,6 @@ const PrivateEventDetail = () => {
 
   useEffect(() => {
     let itemInListPlaceholder = false;
-    // if(Object.values(list).indexOf(`${event[0].id}` > -1)) {
-    //   itemInListPlaceholder = true;
-    // }
     for(let i=0; i < list.length; i++) {
       if(list[i].event_id === event[0].id) {
         itemInListPlaceholder = true;
