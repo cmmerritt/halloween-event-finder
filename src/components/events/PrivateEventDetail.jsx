@@ -34,9 +34,6 @@ const PrivateEventDetail = () => {
         .finally(() => setLoading(false))
   }, [user.id]);
 
-  console.log(list);
-  console.log(event);
-
   useEffect(() => {
     let itemInListPlaceholder = false;
     for(let i=0; i < list.length; i++) {
@@ -49,20 +46,20 @@ const PrivateEventDetail = () => {
 
   if (loading) return <h1>Loading...</h1>;
 
-  const dateObject = new Date(event[0].date);
-  const addDay = add(dateObject, {days: 1});
-  const formattedDate = format(addDay, 'cccc, MMMM d, yyy');
+  // const dateObject = new Date(event[0].date);
+  // const addDay = add(dateObject, {days: 1});
+  // const formattedDate = format(addDay, 'cccc, MMMM d, yyy');
 
-  let formattedTime;
+  // let formattedTime;
 
-  const slicedTimeHoursOnly = event[0].time.slice(0, 2);
-  const slicedTimeMinutesOnly = event[0].time.slice(3, 5);
+  // const slicedTimeHoursOnly = event[0].time.slice(0, 2);
+  // const slicedTimeMinutesOnly = event[0].time.slice(3, 5);
 
-  if(slicedTimeHoursOnly > 13) {
-    formattedTime = (slicedTimeHoursOnly - 12) + ":" + slicedTimeMinutesOnly + " PM"
-  } else {
-    formattedTime = slicedTimeHoursOnly + ":" + slicedTimeMinutesOnly + " AM"
-  };
+  // if(slicedTimeHoursOnly > 13) {
+  //   formattedTime = (slicedTimeHoursOnly - 12) + ":" + slicedTimeMinutesOnly + " PM"
+  // } else {
+  //   formattedTime = slicedTimeHoursOnly + ":" + slicedTimeMinutesOnly + " AM"
+  // };
 
   async function handleClick() {
     const { data, error } = await supabase.from("favorites").insert([
@@ -83,7 +80,7 @@ const PrivateEventDetail = () => {
     if(event[0].isFree === false) {
       return (
         <div className={styles.EventDetail}>
-          <p><b>{formattedDate} at {formattedTime}</b></p>
+          {/* <p><b>{formattedDate} at {formattedTime}</b></p> */}
           <p>{event[0].title}</p>
           <p>{event[0].description}</p>
           <p><i>{event[0].location}, {event[0].address}</i></p>
@@ -94,7 +91,7 @@ const PrivateEventDetail = () => {
       ) } else {
         return (
           <div className={styles.EventDetail}>
-            <p><b>{formattedDate} at {formattedTime}</b></p>
+            {/* <p><b>{formattedDate} at {formattedTime}</b></p> */}
             <p>{event[0].title}</p>
             <p>{event[0].description}</p>
             <p><i>{event[0].location}, {event[0].address}</i></p>
@@ -107,7 +104,7 @@ const PrivateEventDetail = () => {
     } else if(event[0].isFree === false) {
       return (
         <div className={styles.EventDetail}>
-          <p><b>{formattedDate} at {formattedTime}</b></p>
+          {/* <p><b>{formattedDate} at {formattedTime}</b></p> */}
           <p>{event[0].title}</p>
           <p>{event[0].description}</p>
           <p><i>{event[0].location}, {event[0].address}</i></p>
@@ -120,7 +117,7 @@ const PrivateEventDetail = () => {
     } else {
       return (
         <div className={styles.EventDetail}>
-          <p><b>{formattedDate} at {formattedTime}</b></p>
+          {/* <p><b>{formattedDate} at {formattedTime}</b></p> */}
           <p>{event[0].title}</p>
           <p>{event[0].description}</p>
           <p><i>{event[0].location}, {event[0].address}</i></p>
