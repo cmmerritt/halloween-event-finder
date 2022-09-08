@@ -15,21 +15,36 @@ const Event = ({ id, title, description, date, time, location, address, url, isF
     formattedTime = (slicedTimeHoursOnly - 12) + ":00 PM"
   } else {
     formattedTime = slicedTimeHoursOnly + ":00 AM"
-  }
-  
-  return (
-  <>
-    <Link to={`/events/${id}`}>{title}</Link>
-    <p>{description}</p>
-    <p>{formattedDate}</p>
-    <p>{formattedTime}</p>
-    <p>{location}, {address}</p>
-    <p><a href={url}>Link to event</a></p>
-    <p>Is this event free? {isFree}</p>
-    <p>Price: ${price}</p>
-    <p>Category: {category}</p>
-  </>
-)
+  };
+
+  const slicedDescription = description.slice(0, 300) + "...";
+
+  if(isFree === false) {
+    return (
+      <>
+        <p><b>{formattedDate} at {formattedTime}</b></p>
+        <Link to={`/events/${id}`}>{title}</Link>
+        <p>{slicedDescription}</p>
+        <p><i>{location}, {address}</i></p>
+        <p><a href={url} target="_blank" rel="noopener noreferrer">Event website</a></p>
+        <p>${price}</p>
+      </>
+    )
+  } else {
+      return (
+        <>
+          <p><b>{formattedDate} at {formattedTime}</b></p>
+          <Link to={`/events/${id}`}>{title}</Link>
+          <p>{slicedDescription}</p>
+          <p><i>{location}, {address}</i></p>
+          <p><a href={url} target="_blank" rel="noopener noreferrer">Event website</a></p>
+          <p>Free</p>
+        </>
+      )
+  };
+
+
+
 };
 
 Event.propTypes = {
