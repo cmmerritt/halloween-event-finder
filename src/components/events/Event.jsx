@@ -1,20 +1,21 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { format } from "date-fns";
+import { add, format } from "date-fns";
 import PropTypes from "prop-types";
 
 const Event = ({ id, title, description, date, time, location, address, url, isFree, price, category }) => {
 
-  const formattedDate = format((new Date(date)), 'cccc, MMMM d, yyy');
+  const dateObject = new Date(date);
+  const addDay = add(dateObject, {days: 1});
+  const formattedDate = format(addDay, 'cccc, MMMM d, yyy');
 
   let formattedTime;
-
   const slicedTimeHoursOnly = time.slice(0, 2);
-
+  const slicedTimeMinutesOnly = time.slice(3, 5);
   if(slicedTimeHoursOnly > 13) {
-    formattedTime = (slicedTimeHoursOnly - 12) + ":00 PM"
+    formattedTime = (slicedTimeHoursOnly - 12) + ":" + slicedTimeMinutesOnly + " PM"
   } else {
-    formattedTime = slicedTimeHoursOnly + ":00 AM"
+    formattedTime = slicedTimeHoursOnly + ":" + slicedTimeMinutesOnly + " AM"
   };
 
   const slicedDescription = description.slice(0, 300) + "...";

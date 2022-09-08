@@ -17,6 +17,8 @@ const EventFeed = () => {
 
   if (loading) return <h1>Loading...</h1>;
 
+  events.sort((a,b) => a.date.localeCompare(b.date) || b.time - a.time);
+
   return <EventList events={events} />;
 };
 
