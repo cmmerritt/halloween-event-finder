@@ -3,7 +3,7 @@ import supabase from "../../services/supabaseClient";
 import { fetchEventById } from '../../services/supabaseEventsApi';
 import { useUser } from "../../services/UserContext";
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import { add, format } from "date-fns";
+// import { add, format } from "date-fns";
 import { fetchWishlistByUserId } from "../../services/supabaseFavoritesApi";
 import styles from "./EventDetail.module.css";
 
