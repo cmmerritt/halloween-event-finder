@@ -154,7 +154,7 @@ const PrivateHeader = () => {
 
   return (
     <header>
-      <AppBar position="sticky">
+      <AppBar position="fixed">
         {mobileView ? displayMobile() : displayDesktop()}
       </AppBar>
     </header>
