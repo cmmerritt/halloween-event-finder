@@ -89,7 +89,6 @@ const PrivateEventDetail = () => {
           <p><i>{event[0].location}, {event[0].address}</i></p>
           <p><a href={event[0].url} target="_blank" rel="noopener noreferrer">Event website</a></p>
           <p>${event[0].price}</p>
-          <button onClick={handleClick}>Add to wishlist</button>
           <Link to="/">Go back to all events</Link>
         </div>
       ) } else {
@@ -101,7 +100,6 @@ const PrivateEventDetail = () => {
             <p><i>{event[0].location}, {event[0].address}</i></p>
             <p><a href={event[0].url} target="_blank" rel="noopener noreferrer">Event website</a></p>
             <p>Free</p>
-            <button onClick={handleClick}>Add to wishlist</button>
             <Link to="/">Go back to all events</Link>
           </div>
         )
@@ -115,6 +113,7 @@ const PrivateEventDetail = () => {
           <p><i>{event[0].location}, {event[0].address}</i></p>
           <p><a href={event[0].url} target="_blank" rel="noopener noreferrer">Event website</a></p>
           <p>${event[0].price}</p>
+          <button onClick={handleClick}>Add to wishlist</button>
           <Link to="/">Go back to all events</Link>
         </div>
       )
@@ -127,6 +126,7 @@ const PrivateEventDetail = () => {
           <p><i>{event[0].location}, {event[0].address}</i></p>
           <p><a href={event[0].url} target="_blank" rel="noopener noreferrer">Event website</a></p>
           <p>Free</p>
+          <button onClick={handleClick}>Add to wishlist</button>
           <Link to="/">Go back to all events</Link>
         </div>
       )
