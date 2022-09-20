@@ -7,23 +7,41 @@
 
 .AddEventFormFields {
   font-size: large;
+  font-weight: bold;
 }
 
 .DescriptionInput {
   height: 100px;
 }
 
+.DateTimePicker {
+  padding: 10px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
 input {
   width: 100%;
   padding: 10px 20px;
-  margin: 5px 0;
+  margin: 10px 0;
   box-sizing: border-box;
   border-radius: 2px;
 }
 
 select {
   padding: 10px 20px;
-  margin: 5px 0;
+  margin: 10px 0;
   box-sizing: border-box;
   border-radius: 2px;
+}
+
+button {
+  background-color: #eb5e28ff;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
 }

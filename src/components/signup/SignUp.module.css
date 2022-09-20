@@ -4,3 +4,7 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 120px 40px;
 }
+
+.SignUpInput {
+  width: 25%;
+}

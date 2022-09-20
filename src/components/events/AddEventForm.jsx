@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import supabase from "../../services/supabaseClient";
 import { useNavigate } from "react-router-dom";
+import DatePicker from 'react-date-picker';
+import TimePicker from 'react-time-picker';
 import styles from './AddEventForm.module.css';
 
 const AddEventForm = () => {
@@ -11,8 +13,8 @@ const AddEventForm = () => {
   const [location, setLocation] = useState("");
   const [address, setAddress] = useState("");
   const [url, setUrl] = useState("");
-  const [isFree, setIsfree] = useState("");
-  const [price, setPrice] = useState("");
+  const [isFree, setIsfree] = useState("true");
+  const [price, setPrice] = useState("0");
   const [category, setCategory] = useState("");
   const navigate = useNavigate();
   
@@ -35,7 +37,7 @@ const AddEventForm = () => {
       console.error(error);
       return alert(error.message);
     }
-    navigate("/events");
+    navigate("/");
     console.log(data);
   }
 
@@ -58,18 +60,25 @@ const AddEventForm = () => {
           />
 
         <label htmlFor="date">Date </label>
+        <DatePicker onChange={setDate} value={date} className={styles.DateTimePicker} />
+
+        {/* <label htmlFor="date">Date </label>
           <input
             name="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
-          />
+          /> */}
 
         <label htmlFor="time">Time </label>
+        <TimePicker onChange={setTime} value={time} className={styles.DateTimePicker} />
+        <br />
+
+        {/* <label htmlFor="time">Time </label>
           <input
             name="time"
             value={time}
             onChange={(e) => setTime(e.target.value)}
-          />
+          /> */}
 
         <label htmlFor="location">Location </label>
           <input

@@ -51,7 +51,9 @@ export default function SignUp() {
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            className={styles.SignUpInput}
           />
+          &nbsp;
           <button type="submit" onClick={onClick}>Send Me A Magic Link!</button>
           <div>
           { showMessage ? <Message /> : null }
