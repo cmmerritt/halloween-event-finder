@@ -42,71 +42,75 @@ const AddEventForm = () => {
   return (
     <div className={styles.AddEventForm}>
       <h1>Add an Event</h1>
-      <div>
-        <label htmlFor="title">Event title</label>
-        <input
-          name="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
+      <div className={styles.AddEventFormFields}>
+        <label htmlFor="title">Event title </label>
+          <input
+            name="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
 
-        <label htmlFor="description">Description</label>
-        <input
-          name="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+        <label htmlFor="description">Description </label>
+          <input className={styles.DescriptionInput}
+            name="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
 
-        <label htmlFor="date">Date</label>
-        <input
-          name="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-        />
+        <label htmlFor="date">Date </label>
+          <input
+            name="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
 
-        <label htmlFor="time">Time</label>
-        <input
-          name="time"
-          value={time}
-          onChange={(e) => setTime(e.target.value)}
-        />
+        <label htmlFor="time">Time </label>
+          <input
+            name="time"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+          />
 
-        <label htmlFor="location">Location</label>
-        <input
-          name="location"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-        />
+        <label htmlFor="location">Location </label>
+          <input
+            name="location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
 
-        <label htmlFor="address">Address</label>
-        <input
-          name="address"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-        />
+        <label htmlFor="address">Address </label>
+          <input
+            name="address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
 
-        <label htmlFor="url">Link</label>
-        <input
-          name="url"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-        />
+        <label htmlFor="url">Link </label>
+          <input
+            name="url"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+          />
+
 
         <label htmlFor="isFree">Is it free?
-            <select title="isFree" name="isFree" value={isFree} onChange={(e) => setIsfree(e.target.value)}>
-              <option value="true">Yes, it's free</option>
-              <option value="false">No, it costs money</option>
-            </select>
-          </label>
+        <br />
+          <select title="isFree" name="isFree" value={isFree} onChange={(e) => setIsfree(e.target.value)}>
+            <option value="true">Yes, it's free</option>
+            <option value="false">No, it costs money</option>
+          </select>
+        </label>
+        <br />
 
-        <label htmlFor="price">Price</label>
-        <input
-          name="price"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
+        <label htmlFor="price">Price </label>
+          <input
+            name="price"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+          />
 
         <label htmlFor="category">Category
+        <br />
             <select title="category" name="category" value={category} onChange={(e) => setCategory(e.target.value)}>
               <option value="barcrawl">Bar Crawl</option>
               <option value="concert">Concert</option>
@@ -125,7 +129,7 @@ const AddEventForm = () => {
               <option value="tricktreat">Trick-or-Treating</option>
             </select>
           </label>
-
+        <br />
         <button onClick={handleClick}>Submit</button>
       </div>
     </div>

@@ -1,5 +1,29 @@
 .AddEventForm {
   background-color: floralwhite;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   color: #252422ff;
-  margin: 120px 40px;
+  margin: 150px 40px;
+}
+
+.AddEventFormFields {
+  font-size: large;
+}
+
+.DescriptionInput {
+  height: 100px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+select {
+  padding: 10px 20px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border-radius: 2px;
 }
