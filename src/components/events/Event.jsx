@@ -12,8 +12,11 @@ const Event = ({ id, title, description, date, time, location, address, url, isF
   let formattedTime;
   const slicedTimeHoursOnly = time.slice(0, 2);
   const slicedTimeMinutesOnly = time.slice(3, 5);
-  if(slicedTimeHoursOnly > 13) {
+  console.log(slicedTimeHoursOnly);
+  if(slicedTimeHoursOnly >= 13) {
     formattedTime = (slicedTimeHoursOnly - 12) + ":" + slicedTimeMinutesOnly + " PM"
+  } else if(slicedTimeHoursOnly === '12') {
+    formattedTime = "12:" + slicedTimeMinutesOnly + " PM"
   } else {
     formattedTime = slicedTimeHoursOnly + ":" + slicedTimeMinutesOnly + " AM"
   };
