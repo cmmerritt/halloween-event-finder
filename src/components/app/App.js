@@ -20,7 +20,7 @@ export default function App() {
         <UserContextProvider supabaseClient={supabaseClient}>
           <Header />
           <Routes>
-            <Route path="/events" element={<EventFeed />} />
+          <Route path="/events" element={<EventDetail />} />
             <Route path="/events/:id" element={<EventDetail />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/addevent" element={<PrivateRoute component={AddEventForm}/>} />

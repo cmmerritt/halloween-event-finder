@@ -2,4 +2,9 @@
   background-color: floralwhite;
   color: #252422ff;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 140px 40px;
+}
+
+.SignUpInput {
+  width: 25%;
 }

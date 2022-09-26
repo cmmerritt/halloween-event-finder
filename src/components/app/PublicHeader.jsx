@@ -12,18 +12,14 @@ import './Header.module.css';
 
 const PublicHeader = () => {
 
-  const [state, setState] = useState({
-    mobileView: false,
-    drawerOpen: false
-  });
-
-  const { mobileView, drawerOpen } = state;
+  const [mobileView, setMobileView] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
     const setResponsiveness = () => {
       return window.innerWidth < 900
-        ? setState((prevState) => ({ ...prevState, mobileView: true }))
-        : setState((prevState) => ({ ...prevState, mobileView: false }));
+        ? setMobileView(true)
+        : setMobileView(false);
     };
 
     setResponsiveness();
@@ -37,7 +33,7 @@ const PublicHeader = () => {
   const headersData = [
     {
       label: "Events",
-      href: "/events",
+      href: "/",
     },
     {
       label: "Sign up/Log in",
@@ -56,7 +52,7 @@ const PublicHeader = () => {
             component: RouterLink,
           }}
         >
-          {label}
+          &nbsp;{label}&nbsp;
         </Button>
       );
     });
@@ -87,13 +83,16 @@ const PublicHeader = () => {
     padding: 20px 30px;
   `
 
+  const TextDiv = styled.div`
+    margin-right: 20px;
+  `
   const displayMobile = () => {
     const handleDrawerOpen = () => {
-      setState((prevState) => ({ ...prevState, drawerOpen: true }))
+      setDrawerOpen(true);
     }
 
     const handleDrawerClose = () => {
-      setState((prevState) => ({ ...prevState, drawerOpen: false }))
+      setDrawerOpen(false);
     }
     
     const getDrawerChoices = () => {
@@ -137,9 +136,9 @@ const PublicHeader = () => {
             <DrawerContainer>{getDrawerChoices()}</DrawerContainer>
           </Drawer>
         </Toolbar>
-        <div>
+        <TextDiv>
           <h1>POrtlAnd HalLoweEn EveNt FiNdEr</h1>
-        </div>
+        </TextDiv>
       </Div>
     )
   };
@@ -161,8 +160,7 @@ const PublicHeader = () => {
 
   return (
     <header>
-      {/* <AppBar>{headerDisplay()}</AppBar> */}
-      <AppBar>
+      <AppBar position="fixed">
         {mobileView ? displayMobile() : displayDesktop()}
       </AppBar>
     </header>
