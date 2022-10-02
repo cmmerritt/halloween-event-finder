@@ -17,6 +17,8 @@ const WishListFeed = () => {
         .finally(() => setLoading(false))
   }, [user.id]);
 
+  
+
   if (loading) return <h1>Loading...</h1>;
 
   return <WishList list={list} />;

@@ -29,7 +29,7 @@ const WishListItem = ({ id, user_id, event_id }) => {
       console.error(error);
       return alert(error.message);
     }
-    navigate("/wishlist");
+    navigate(0);
     console.log(data);
   }
 
