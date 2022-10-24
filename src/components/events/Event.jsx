@@ -23,7 +23,7 @@ const Event = ({ id, title, description, date, time, location, address, url, isF
 
   const slicedDescription = description.slice(0, 300) + "...";
 
-  if(isFree === false) {
+  if(isFree === false && dateObject > Date.now()) {
     return (
       <>
         <p><b>{formattedDate} at {formattedTime}</b></p>
@@ -32,9 +32,10 @@ const Event = ({ id, title, description, date, time, location, address, url, isF
         <p><i>{location}, {address}</i></p>
         <p><a href={url} target="_blank" rel="noopener noreferrer">Event website</a></p>
         <p>${price}</p>
+        <hr />
       </>
     )
-  } else {
+  } else if(isFree === true && dateObject > Date.now()){
       return (
         <>
           <p><b>{formattedDate} at {formattedTime}</b></p>
@@ -43,12 +44,10 @@ const Event = ({ id, title, description, date, time, location, address, url, isF
           <p><i>{location}, {address}</i></p>
           <p><a href={url} target="_blank" rel="noopener noreferrer">Event website</a></p>
           <p>Free</p>
+          <hr />
         </>
       )
-  };
-
-
-
+  }
 };
 
 Event.propTypes = {
